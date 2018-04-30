@@ -24,9 +24,6 @@ module.exports = (env = {}) => {
         plugins: [
             new HtmlWebpackPlugin({template: path.resolve(__dirname, './index.tpl.html')})
         ],
-        devtool: mode === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
-        devServer: {
-            host: '0.0.0.0'
-        }
+        devtool: mode === 'production' ? 'source-map' : 'cheap-module-eval-source-map'
     }
 };

@@ -1,12 +1,12 @@
 {
-  "name": "react-demo",
+  "name": "react-simple",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --env.production",
-    "dev": "webpack-dev-server --hot --inline"
+    "dev": "webpack-dev-server --hot"
   },
   "author": "",
   "license": "ISC",
