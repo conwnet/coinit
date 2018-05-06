@@ -6,7 +6,7 @@ module.exports = (env = {}) => {
 
     process.env.NODE_ENV = mode;
     return {
-        entry: path.resolve(__dirname, './src/index.js'),
+        entry: path.resolve(__dirname, './renderer/index.js'),
         output: {
             filename: 'bundle.js',
             path: path.resolve(__dirname, './dist')
@@ -16,9 +16,13 @@ module.exports = (env = {}) => {
             rules: [{
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
+                exclude: /node_modules/
             }, {
-                test: /\.(css|less)$/,
-                use: ['style-loader', 'css-loader?modules', 'less-loader']
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }, {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader?modules&camelCase', 'less-loader?javascriptEnabled']
             }]
         },
         plugins: [

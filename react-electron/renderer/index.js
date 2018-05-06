@@ -4,7 +4,7 @@ import styles from './style.less';
 
 class App extends PureComponent {
     state = {
-        name: 'Bob'
+        name: 'netcon'
     };
 
     render() {

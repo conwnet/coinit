@@ -1,10 +1,7 @@
+require('babel-register');
 const {app, BrowserWindow} = require('electron');
-const child_process = require('child_process');
 const path = require('path');
 const url = require('url');
-
-// 启动 Webpack Dev Server
-child_process.exec('npm run dev');
 
 const createWindow = () => {
     const win = new BrowserWindow({width: 800, height: 600});
@@ -18,7 +15,7 @@ const createWindow = () => {
     }));
 
     // 打开开发者工具
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 
     // window 关闭的回调
     win.on('close', () => {
