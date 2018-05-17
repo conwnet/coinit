@@ -41,23 +41,18 @@ const getEnv = () => {
     const args = process.argv.slice(2);
 
     if (!args.length) {
-        return 'react-simple';
+        return 'react';
     }
 
     return args[0];
 };
 
 const main = () => {
-    switch(getEnv()) {
-        case 'react-simple':
-            copy_dir($path.resolve(__dirname, 'react-simple'), './react-simple');
-            console.log('enjoy it!'); break;
-        case 'react-electron':
-            copy_dir($path.resolve(__dirname, 'react-electron'), './react-electron');
-            console.log('enjoy it!'); break;
-        default:
-            console.log('invalid template name');
-    }
+    const template = getEnv() + '-sample';
+
+    copy_dir($path.resolve(__dirname, 'templates', template), `./${template}`, () => {
+        console.log('Invalid template name');
+    });
 };
 
 main();
